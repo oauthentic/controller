@@ -21,7 +21,7 @@ Follow the instructions of your hardware to get started with the motherboard and
 | | Raspberry GPIO | optocoupler |
 | -- | -- | -- |
 | 5V power | pin 4 | VCC |
-| Ground | pin 5 | Ground |
+| Ground | pin 6 | Ground |
 | IO port | pin 23 | relay 1 |
 
 See below the Rasperry 4 GPIO description.

@@ -23,3 +23,7 @@ Follow the instructions of your hardware to get started with the motherboard and
 | 5V power | pin 4 | VCC |
 | Ground | pin 5 | Ground |
 | IO port | pin 23 | relay 1 |
+
+See below the Rasperry 4 GPIO description.
+
+ ![GPIO](img/GPIO.png)

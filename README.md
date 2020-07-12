@@ -34,3 +34,6 @@ Follow the instructions of your hardware to get started with the motherboard and
 
 The relay can be used to trigger any equipment. For test and demo purpose, it is recommended to start with a simple lamp. When installed, the controller will be customizable from the [*O*Authentic Developer Dashboard](https://oauthentic.com/app/), including the relay triggering time.
 
+## Software installation
+
+To be continued

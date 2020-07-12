@@ -24,6 +24,9 @@ Follow the instructions of your hardware to get started with the motherboard and
 | Ground | pin 6 | Ground |
 | IO port | pin 23 | relay 1 |
 
-See below the Rasperry 4 GPIO description.
+See below the Rasperry 4 GPIO description and pictures of hardware configuration.
 
- ![GPIO](img/GPIO.png)
+ ![GPIO](img/GPIO.jpg)
+ 
+ ![Hardware configuration](img/rasprelay.jpg)
+

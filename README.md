@@ -24,9 +24,13 @@ Follow the instructions of your hardware to get started with the motherboard and
 | Ground | pin 6 | Ground |
 | IO port | pin 23 | relay 1 |
 
-See below the Rasperry 4 GPIO description and pictures of hardware configuration.
+### GPIO description for Raspberry 4
 
- ![GPIO](img/GPIO.jpg)
+![GPIO](img/GPIO.jpg)
+
+### Hardware configuration for the *O*Authentic Controller
  
  ![Hardware configuration](img/rasprelay.jpg)
+
+The relay can be used to trigger any equipment. For test and demo purpose, it is recommended to start with a simple lamp. When installed, the controller will be customizable from the [*O*Authentic Developer Dashboard](https://oauthentic.com/app/), including the relay triggering time.
 

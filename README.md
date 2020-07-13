@@ -27,7 +27,7 @@ Follow the instructions of your hardware to get started with the motherboard and
 | Ground | pin 6 | Ground |
 | IO port | pin 15 | relay 1 |
 
-### Raspberry 4 GPIO description
+### Raspberry 4 GPIO description 
 
 ![GPIO](img/GPIO.jpg)
 

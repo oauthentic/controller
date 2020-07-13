@@ -4,7 +4,9 @@
 
 This project proposes an Open Source implementation of a *Physical Access Controller* based on the [*O*Authentic API](https://oauthentic.com/en/api.html) that takes care of user authentication and a [Raspberry 4](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/) as a controller that is a connected to a relay in order to trigger an electric door lock or any other security system.
 
-## Hardware components
+## Hardware
+
+### Components
 
 The project is based on the following components:
 
@@ -14,7 +16,8 @@ The project is based on the following components:
   
 You can use other components for this project (e.g. Raspberry 3, 5-inch screen, other model of relay) depending on your personal requirements. 
   
-## Hardware installation
+
+### Installation
 
 Follow the instructions of your hardware to get started with the motherboard and the screen. For the optocoupler, we just need to connect it to one the Raspberry GPIO pin such as in the following table:
 
@@ -30,10 +33,24 @@ Follow the instructions of your hardware to get started with the motherboard and
 
 ### Hardware configuration for the *O*Authentic Controller
  
- ![Hardware configuration](img/rasprelay.jpg)
+![Hardware configuration](img/rasprelay.jpg)
 
 The relay can be used to trigger any equipment. For test and demo purpose, it is recommended to start with a simple lamp. When installed, the controller will be customizable from the [*O*Authentic Developer Dashboard](https://oauthentic.com/app/), including the relay triggering time.
 
-## Software installation
+## Software
 
-To be continued
+### Architecture
+
+![Software Architecture](img/controller-archi.png)
+
+The controller is composed of two modules:
+
+- the client module is an HTML/CSS/JavaScript app that takes care of the user interface, the controller logic and the communications with :
+	- the *O*Authentic API server: `https://api.oauthentic.com`
+	- the local server: `http://localhost:8080`
+
+- the local Nodejs server module takes care of interactions with Raspberry hardware. 
+
+
+
+## Controller setup

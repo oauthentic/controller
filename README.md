@@ -19,13 +19,13 @@ You can use other components for this project (e.g. Raspberry 3, 5-inch screen, 
 
 ### Installation
 
-Follow the instructions of your hardware to get started with the motherboard and the screen. For the optocoupler, we just need to connect it to one the Raspberry GPIO pin such as in the following table that uses the GPIO #23 to manage the relay #1  of the optocoupler:
+Follow the instructions of your hardware to get started with the motherboard and the screen. For the optocoupler, we just need to connect it to one the Raspberry GPIO pin such as in the following table that uses the GPIO port 23 to manage the first relay of the optocoupler:
 
 | | Raspberry GPIO | optocoupler |
 | -- | -- | -- |
 | 5V power | pin 4 | VCC |
 | Ground | pin 6 | Ground |
-| IO port | pin 15 | relay 1 |
+| IO port  | pin 15 | relay 1 |
 
 ### Raspberry 4 GPIO description 
 
@@ -45,11 +45,11 @@ The relay can be used to trigger any equipment. For test and demo purpose, it is
 
 The controller is composed of two modules:
 
-- the client module is an HTML/CSS/JavaScript app that takes care of the user interface, the controller logic and the communications with :
-	- the *O*Authentic API server: `https://api.oauthentic.com`
-	- the local server: `http://localhost:8080`
+- the client module is an HTML/CSS/JavaScript app that runs in the default Chromium browser and that takes care of (1) user interface, (2) controller logic and (3) communications with :
+	- the *O*Authentic API server: [https://api.oauthentic.com](https://oauthentic.com/en/api.html),
+	- the local server.
 
-- the local Nodejs server module takes care of interactions with Raspberry hardware. 
+- the local Nodejs HTTP server module takes care of interactions with Raspberry hardware (system, gpio...). 
 
 
 

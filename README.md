@@ -19,19 +19,19 @@ You can use other components for this project (e.g. Raspberry 3, 5-inch screen, 
 
 ### Installation
 
-Follow the instructions of your hardware to get started with the motherboard and the screen. For the optocoupler, we just need to connect it to one the Raspberry GPIO pin such as in the following table:
+Follow the instructions of your hardware to get started with the motherboard and the screen. For the optocoupler, we just need to connect it to one the Raspberry GPIO pin such as in the following table that uses the GPIO #23 to manage the relay #1  of the optocoupler:
 
 | | Raspberry GPIO | optocoupler |
 | -- | -- | -- |
 | 5V power | pin 4 | VCC |
 | Ground | pin 6 | Ground |
-| IO port | pin 23 | relay 1 |
+| IO port | pin 15 | relay 1 |
 
-### GPIO description for Raspberry 4
+### Raspberry 4 GPIO description
 
 ![GPIO](img/GPIO.jpg)
 
-### Hardware configuration for the *O*Authentic Controller
+### Hardware configuration of the *O*Authentic Controller
  
 ![Hardware configuration](img/rasprelay.jpg)
 

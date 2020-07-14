@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en" translate="no">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta charset="UTF-8">
+    <!-- See https://content-security-policy.com/ and consider customization depending on the way you run the local
+    raspberry server -->
+    <meta http-equiv="Content-Security-Policy"
+          content="
+          default-src 'self' data: gap:;
+          style-src 'self' 'unsafe-inline';
+          media-src *; img-src 'self' https://oauthentic.com localhost data: content:;
+          connect-src http://localhost:8080 http://192.168.1.91:8080 http://192.168.1.99:8080 http://192.168.1.103:8080 https://oauthentic.com  https://api.oauthentic.com https://dev.oauthentic.com https://socket.oauthentic.com wss://socket.oauthentic.com;">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+    <title>OAuthentic</title>
+    <link rel="stylesheet" href="css/oa-rasp-client.css">
+</head>
+<body>
+<div id="screens">
+    <div class="screen" id="start">
+        <div id="start-version">ver. 1.x.x</div>
+        <div class="body outer">
+            <div class="inner">
+                <div><img class="logo" src="img/oauthentic-lite.svg" alt="logo"></div>
+                <div id="start-name"><i class="orange">O</i>Authentic</div>
+                <div id="start-base">Sensitive Data and Identity Management</div>
+                <div id="start-lang">
+                    <img src="img/flag-en.svg" alt="en">
+                    <div>Please select langage</div>
+                    <img src="img/flag-fr.svg" alt="fr">
+                    <div>Veuillez sélectionnez la langue</div>
+                </div>
+            </div>
+        </div>
+        <div class="foot">
+            <div class="foot-margin"></div>
+            <div class="foot-body">
+                <div class="button lang" id="btn-en">
+                    <div class="outer">
+                        <div class="inner">English</div>
+                    </div>
+                </div>
+                <div class="button lang" id="btn-fr">
+                    <div class="outer">
+                        <div class="inner">Français</div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-margin"></div>
+        </div>
+    </div>
+    <div class="screen" id="network">
+        <div class="body outer">
+            <div class="inner">
+                <div><img class="logo" src="img/oauthentic-lite.svg" alt="logo"></div>
+                <h2 class="yellow" id="networkNotFound"></h2>
+                <p id="networkSolve1"></p>
+                <ul>
+                    <li id="networkSolve2"></li>
+                    <li id="networkSolve3"></li>
+                    <li id="networkSolve4"></li>
+                </ul>
+            </div>
+        </div>
+        <div class="foot">
+            <div class="foot-margin"></div>
+            <div class="foot-body">
+                <div class="button" id="btn-close">
+                    <div class="outer">
+                        <div class="inner close">QUIT</div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-margin"></div>
+        </div>
+    </div>
+    <div class="screen" id="install">
+        <div class="body">
+            <div class="half outer">
+                <div class="inner">
+                    <h2 id="installTitle"></h2>
+                    <p id="installText1"></p>
+                    <p id="installText2"></p>
+                </div>
+            </div>
+            <div class="half outer">
+                <div class="inner">
+                    <div id="install-container">
+                        <div id="install-qr"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="foot">
+            <div class="foot-margin"></div>
+            <div class="foot-body">
+                <div class="button" id="btn-apple"></div>
+                <div class="button" id="btn-google"></div>
+            </div>
+            <div class="bottom-margin"></div>
+        </div>
+    </div>
+    <div class="screen" id="apple">
+        <div class="body">
+            <div class="half outer">
+                <div class="inner">
+                    <h2 class="nobold"><i class="orange">O</i>Authentic<br>dans App Store Apple</h2>
+                    <img class="install-logo" src="img/apple-lite.svg" alt="Apple logo">
+                    <p id="appleText"></p>
+                </div>
+            </div>
+            <div class="half outer">
+                <div class="inner">
+                    <img class="qr-link" src="img/link-apple.png" alt="Apple Store">
+                </div>
+            </div>
+        </div>
+        <div class="foot">
+            <div class="foot-margin"></div>
+            <div class="foot-body">
+                <div class="button" id="apple-back">
+                    <div class="outer">
+                        <div class="inner" id="appleBack"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-margin"></div>
+        </div>
+    </div>
+    <div class="screen" id="google">
+        <div class="body">
+            <div class="half outer">
+                <div class="inner">
+                    <h2 class="nobold"><i class="orange">O</i>Authentic<br>dans Google Play</h2>
+                    <img class="install-logo" src="img/android-green.svg" alt="Android logo">
+                    <p id="googleText"></p>
+                </div>
+            </div>
+            <div class="half outer">
+                <div class="inner">
+                    <img class="qr-link" src="img/link-google.png" alt="Google Play">
+                </div>
+            </div>
+        </div>
+        <div class="foot">
+            <div class="foot-margin"></div>
+            <div class="foot-body">
+                <div class="button" id="google-back">
+                    <div class="outer">
+                        <div class="inner" id="googleBack"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-margin"></div>
+        </div>
+    </div>
+    <div class="screen" id="confirm">
+        <div class="body outer">
+            <div class="inner">
+                <h2 id="confirmTitle"></h2>
+                <p id="confirmText"></p>
+                <p id="confirm-name"></p>
+                <p id="confirm-huid"></p>
+            </div>
+        </div>
+        <div class="foot">
+            <div class="foot-margin"></div>
+            <div class="foot-body">
+                <div class="button">
+                    <div class="outer">
+                        <div class="inner ok" id="confirm-ok"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-margin"></div>
+        </div>
+    </div>
+    <div class="screen" id="home">
+        <div class="body full">
+            <div class="half outer">
+                <div class="inner">
+                    <h2 id="home-title"></h2>
+                    <img id="home-logo" alt="logo">
+                    <p id="home-text"></p>
+                </div>
+            </div>
+            <div class="half outer">
+                <div class="inner">
+                    <div id="qr-control">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="screen" id="result">
+        <div class="body outer">
+            <div class="inner">
+                <h2 id="result-title"></h2>
+                <img id="result-logo" alt="logo">
+                <p id="result-text"></p>
+            </div>
+        </div>
+        <div class="foot">
+            <div id="result-progress"></div>
+        </div>
+    </div>
+</div>
+<script src="lib/socket.io.slim.js"></script>
+<script src="lib/o9-client.1.2.0.js"></script>
+<script src="js/oa-rasp-local.js"></script>
+<script src="js/oa-rasp-client.js"></script>
+</body>
+</html>

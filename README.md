@@ -51,6 +51,6 @@ The controller is composed of two modules:
 
 - the local Nodejs HTTP server module takes care of interactions with Raspberry hardware (system, gpio...). 
 
-
+### Installation
 
 ## Controller setup

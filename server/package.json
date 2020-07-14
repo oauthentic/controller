@@ -1,0 +1,20 @@
+{
+  "name": "http-server-for-oauthentic-controller",
+  "description": "Local http server to access to Raspberry resources",
+  "author": "Guillaume DORBES",
+  "license": "MIT",
+  "version": "1.0.0",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/oauthentic/controller.git",
+    "directory": "server"
+  },
+  "dependencies": {
+    "onoff": "^6.0.0",
+    "shelljs": "^0.8.4",
+    "systeminformation": "^4.26.9"
+  }
+}
